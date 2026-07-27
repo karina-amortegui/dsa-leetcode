@@ -30,8 +30,9 @@ def isAnagram(s: str, t: str) -> bool:
     # { key, value }
     storeS = {}
     storeT = {}
-
-    #{'r': 2, 'a': 2, 'c': 2, 'e': 1}
+    
+    #go through each string and count the occurences of each char
+    #by storing in a hashmap with key being char and value being count ex:{ "j" : 1 }
     for char in s:
         if char not in storeS:
             storeS[char] = 1
@@ -44,6 +45,8 @@ def isAnagram(s: str, t: str) -> bool:
         else: 
             storeT[char] += 1
 
+    #once done for both, compare the dictionaries
+    #if equal return true, if not equal return false
     if storeS == storeT:
         return True
 

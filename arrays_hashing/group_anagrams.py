@@ -1,5 +1,5 @@
 from typing import List
-
+from collections import defaultdict
 
 # Group Anagrams 
 
@@ -24,8 +24,18 @@ from typing import List
 # strs[i] is made up of lowercase English letters.
 
 
+
+
 def groupAnagrams(strs: List[str]) -> List[List[str]]:
+    
+    
+    
     return [[]]
 
-strs = ["eat","tea","tan","ate","nat","bat"]
-print(groupAnagrams(strs))
+# strs = ["eat","tea","tan","ate","nat","bat"]
+# print(groupAnagrams(strs))
+arr = [3,4,5,6,7,8]
+
+hashmap = { "7": 4 }
+var = hashmap["7"]
+print(var) 

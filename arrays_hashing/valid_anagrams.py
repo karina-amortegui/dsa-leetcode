@@ -26,7 +26,7 @@
 #  "m" : 1 
 # }
 
-def isAnagram(s: str, t: str) -> bool:
+def isAnagram(s: str, t: str) -> bool: # -> bool is the function return type
     # { key, value }
     storeS = {}
     storeT = {}
@@ -45,14 +45,12 @@ def isAnagram(s: str, t: str) -> bool:
         else: 
             storeT[char] += 1
 
-    #once done for both, compare the dictionaries
+    #once done for both, compare the hashmaps
     #if equal return true, if not equal return false
     if storeS == storeT:
         return True
 
     return False
-
-
 s = "racecar"
 t = "carrace"
 print(isAnagram(s, t))

@@ -29,7 +29,8 @@ from collections import defaultdict
 # O(n * m) n = number of strings m = the number of characters in each string 
 def groupAnagrams(strs: List[str]) -> List[List[str]]: # [ [" "], [" "] ]
     sub1 = defaultdict(list) # { "key" : [] } -> by default, any key is an empty list
-
+    
+    #get the char frequency of each string
     for word in strs:
         wordStore = [0] * 26 # [0,0,0,0,0,...] 
         # [1,0,2,0,0,0,0, ...]
@@ -39,7 +40,7 @@ def groupAnagrams(strs: List[str]) -> List[List[str]]: # [ [" "], [" "] ]
             #ord(char) -> unicode value of a character
             #ex: ord("c") - ord("a") = 99 - 97 = 2 (3rd index) 
             wordStore[ord(char) - ord("a")] += 1
-            
+        #the frequency string has been made, so using that as the key, add the curr_str to the list of the key
         sub1[str(wordStore)].append(word)
         
     return list(sub1.values())

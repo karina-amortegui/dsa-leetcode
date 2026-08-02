@@ -17,10 +17,28 @@ from typing import List
 # Input: height = [2,2,2]
 # Output: 4
 
-
-def maxArea(height: List[int]) -> int:
+def maxArea(height):
+    left = 0
+    right = len(height) - 1
+    maxContainerArea = 0
     
-    return 0
+    while left != right:
+        #area = (right index - left index) * min(height[left], height[right])
+        area = (right - left) *  min(height[left], height[right])  
+        #if new area > maxContainerArea, set maxContainerArea = area 
+        maxContainerArea = max(area, maxContainerArea)
+        
+        if height[right] < height[left]:    
+            # decrementing in python
+            # if right = 6 then right -= 1 would be 5
+            right -= 1
+        else:
+            left += 1
+            
+    return maxContainerArea
 
-if __name__ == "__main__":
-    maxArea([1,3,7,1,2,6,9,3,4,2,5])
+
+print(maxArea([1,8,6,2,5,4,8,3,7]))
+
+# time complexity = O(n)
+# space complexity = n(1) 

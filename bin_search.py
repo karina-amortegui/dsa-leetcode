@@ -1,7 +1,6 @@
 def bin_search(nums, target):
     left, right = 0, len(nums) - 1
     
-    
     while left <= right:
         mid = (left + right) // 2
         
@@ -12,11 +11,7 @@ def bin_search(nums, target):
         else:
             return mid
     
-    return -1
-
-
-
-    
+    return -1    
 
 if __name__ == "__main__":
     nums = [1,3,4,5,7,9,12,14,17,20]

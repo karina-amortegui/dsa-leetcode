@@ -75,5 +75,5 @@ if __name__ == "__main__":
     piles = [1,4,3,2]
     h = 9
     # piles = [25,10,23,4]
-    h = 4
+    # h = 4
     print(koko_bananas(piles, h))

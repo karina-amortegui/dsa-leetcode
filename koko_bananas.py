@@ -66,14 +66,6 @@ def koko_bananas(piles, h):
 
 
 if __name__ == "__main__":
-    # piles = [3,6,7,11]
-    # h = 8
-    # piles = [30,11,23,4,20]
-    # h = 5
-    # piles = [30,11,23,4,20]
-    # h = 6
     piles = [1,4,3,2]
     h = 9
-    # piles = [25,10,23,4]
-    # h = 4
     print(koko_bananas(piles, h))

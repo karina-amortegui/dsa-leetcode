@@ -21,16 +21,49 @@ from collections import defaultdict
 # There may exists other ways to achieve this answer too.
 
 # Example 3
-# Input: s = "AAABABB", k = 1
-# Output: 5
+# Input: s = "AABBABB", k = 1
+#               L
+#                   R
+
+# charFreq = { "A" : 1, "B" : 4 }
+# substring length = right - left + 1  = 5
+
+# is the current window valid:
+# substring length (5) - most common character count (4) = 1 
+# if this number calculated is less than or equal to k, the window is valid. if not, the window is invalid
+
+#res = 5
+
+# charFreq = {}
+# right = 0
+# s = "AAACAB" k = 2
+# charFreq["A"] == charFreq[s[right]]
 
 def characterReplacement(s, k):
+    charFreq = defaultdict(int) 
+    left = 0
+    result = 0
+
+    for right in range(len(s)):
+        charFreq[s[right]] += 1 #{"A": 1}
+
+        while (right - left + 1) - max(charFreq.values()) > k:
+            charFreq[s[left]] -=1 
+            left += 1
+
+        result = max(right - left + 1, result)
     
-    return 0
+    return result
+
+# time complexity: O(n), n = number of characters in the string 's'.
+# space complexity: O(m), m = number of different characters in the string 's'.
+
+#s = "AAABBA"
+#charFreq = { "A" : 1, "B" : 1 } 
 
 
 if __name__ == "__main__":
-    s = "AAABABB"
+    s = "AABABBA"
     k = 1
     print(characterReplacement(s,k))
 
